@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -7,11 +8,13 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask mask;
 
     PlayerUI playerUI;
+    PlayerInput playerInput;
     
     void Start()
     {
         cameraTransform = Camera.main.transform;
         playerUI = GetComponent<PlayerUI>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
@@ -26,7 +29,12 @@ public class PlayerInteract : MonoBehaviour
 
         if (hit.collider.GetComponent<Interactable>() != null)
         {
-            playerUI.UpdateText(hit.collider.GetComponent<Interactable>().promptMessage);
+            Interactable interactable = hit.collider.GetComponent<Interactable>();           
+            playerUI.UpdateText(interactable.promptMessage);
+            if (playerInput.actions["Interact"].triggered)
+            {
+                interactable.BaseInteract();
+            }
         }
        
     }

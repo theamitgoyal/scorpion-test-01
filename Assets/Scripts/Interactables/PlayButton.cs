@@ -16,6 +16,7 @@ public class PlayButton : Interactable
 
     protected override void Interact()
     {
+        Debug.Log("Interacted With Play Button");
         //Play music and animate button on interact
         base.Interact();
     }
