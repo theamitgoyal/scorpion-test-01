@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    AudioSource audioSource;
+
+    private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Play()
     {
-        
+        Debug.Log("Interacted With Play Button");
+    }
+
+    public void Stop()
+    {
+
+    }
+
+    public void UpdateVolume(float targetVolume)
+    {
+
     }
 }

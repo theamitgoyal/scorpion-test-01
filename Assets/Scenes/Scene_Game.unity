@@ -26655,6 +26655,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 417966405}
+    - target: {fileID: 364276588254598526, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
+      propertyPath: m_VersionIndex
+      value: 544
+      objectReference: {fileID: 0}
     - target: {fileID: 897520923644498751, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -26663,6 +26667,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2004941999}
+    - target: {fileID: 1585748461568221754, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
+      propertyPath: m_VersionIndex
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2299245776049638804, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
       propertyPath: m_Name
       value: DJ Console
@@ -26671,6 +26679,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1772187440}
+    - target: {fileID: 2644779627157930335, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
+      propertyPath: m_VersionIndex
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2954133089543256552, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -26731,10 +26743,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1001973069}
+    - target: {fileID: 6071499875869233866, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
+      propertyPath: m_VersionIndex
+      value: 544
+      objectReference: {fileID: 0}
     - target: {fileID: 6508444791876540459, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 610981838}
+    - target: {fileID: 6508444791876540459, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
+      propertyPath: m_VersionIndex
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 6645254932799462197, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -26747,6 +26767,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1585420764}
+    - target: {fileID: 7559068576231979854, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
+      propertyPath: m_VersionIndex
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 7871422487136822351, guid: 8f99b635511a6c24cac863ab07c7c55b, type: 3}
       propertyPath: m_Mesh
       value: 
