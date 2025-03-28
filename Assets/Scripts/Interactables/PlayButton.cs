@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayButton : Interactable
 {
     Animator animator;
+    MusicPlayer musicPlayer;
     
     void Start()
     {
         animator = GetComponent<Animator>();
+        musicPlayer = GetComponentInParent<MusicPlayer>();
     }
 
     void Update()
@@ -16,9 +18,8 @@ public class PlayButton : Interactable
 
     protected override void Interact()
     {
-        Debug.Log("Interacted With Play Button");
-        //Play music and animate button on interact
         animator.SetTrigger("PlayerInteract");
-        base.Interact();
+        //base.Interact();
+        musicPlayer.Play();
     }
 }
