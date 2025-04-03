@@ -5,6 +5,8 @@ public class InputManager : MonoBehaviour
 {
 
     private PlayerInput playerInput;
+    public PlayerInput PlayerInput { get => playerInput; }
+
     private PlayerInput.CharacterActions characterActions;
     private PlayerLook playerLook;
 
