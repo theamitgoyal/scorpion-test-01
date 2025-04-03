@@ -8,13 +8,13 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask mask;
 
     PlayerUI playerUI;
-    PlayerInput playerInput;
+    //PlayerInput playerInput;
     
     void Start()
     {
         cameraTransform = Camera.main.transform;
         playerUI = GetComponent<PlayerUI>();
-        playerInput = GetComponent<PlayerInput>();
+        //playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
@@ -31,10 +31,10 @@ public class PlayerInteract : MonoBehaviour
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();           
             playerUI.UpdateText(interactable.promptMessage);
-            if (playerInput.actions["Interact"].triggered)
+            /*if (playerInput.actions["Interact"].triggered)
             {
                 interactable.BaseInteract();
-            }
+            }*/
         }
        
     }
