@@ -24,22 +24,27 @@ public class PlayerInteract : MonoBehaviour
         Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
         Debug.DrawRay(cameraTransform.position, cameraTransform.forward * detectionDistance, Color.red);
         RaycastHit hit;
+        
         if (!Physics.Raycast(ray, out hit, detectionDistance, mask)) return;
-       
 
-        if (hit.collider.GetComponent<Interactable>() != null)
+        if (!hit.collider.TryGetComponent(out Interactable interactable)) return;
+
+        playerUI.UpdateText(interactable.PromptMessage);
+        
+        if (!interactable.HoldToInteract)
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();           
-            playerUI.UpdateText(interactable.promptMessage);
-            if(inputManager.PlayerInput.Character.Interact.triggered)
+            if (inputManager.PlayerInput.Character.Interact.triggered)
             {
                 interactable.BaseInteract();
             }
-            /*if (playerInput.actions["Interact"].triggered)
+        }        
+        else if (interactable.HoldToInteract)
+        {
+            if (inputManager.PlayerInput.Character.Interact.triggered)
             {
-                interactable.BaseInteract();
-            }*/
+                Debug.Log("Interactable is hold type");
+            }
         }
-       
+
     }
 }
