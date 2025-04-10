@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: (Hold) Adjust Volume with A and D
   holdToInteract: 1
-  slideSpeed: 3
+  slideSpeed: 0.75
   leftPos: {fileID: 3915483473140202206}
   rightPos: {fileID: 8373371802322226392}
   centrePos: {fileID: 3103360517071935517}
