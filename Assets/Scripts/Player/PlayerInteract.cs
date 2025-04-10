@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,12 +10,16 @@ public class PlayerInteract : MonoBehaviour
 
     PlayerUI playerUI;
     InputManager inputManager;
-    
-    void Start()
+    bool isInteracting;
+
+    private void Start()
     {
         cameraTransform = GetComponentInChildren<Camera>().transform;
         playerUI = GetComponent<PlayerUI>();
         inputManager = GetComponent<InputManager>();
+
+        inputManager.PlayerInput.Character.Interact.performed += HoldInteractPerformed;
+        inputManager.PlayerInput.Character.Interact.canceled += HoldInteractCanceled;
     }
 
     void Update()
@@ -40,11 +45,22 @@ public class PlayerInteract : MonoBehaviour
         }        
         else if (interactable.HoldToInteract)
         {
-            if (inputManager.PlayerInput.Character.Interact.triggered)
+            if (isInteracting)
             {
-                Debug.Log("Interactable is hold type");
+                interactable.BaseHoldInteract(inputManager.CharacterActions.AddInteract.ReadValue<Vector2>());
             }
         }
 
     }
+
+    private void HoldInteractPerformed(InputAction.CallbackContext context)
+    {
+        isInteracting = true;
+    }
+
+    private void HoldInteractCanceled(InputAction.CallbackContext context)
+    {
+        isInteracting = false;
+    }
+   
 }

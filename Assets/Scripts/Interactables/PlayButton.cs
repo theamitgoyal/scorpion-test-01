@@ -19,7 +19,6 @@ public class PlayButton : Interactable
     protected override void Interact()
     {
         animator.SetTrigger("PlayerInteract");
-        //base.Interact();
         musicPlayer.Play();
     }
 }
