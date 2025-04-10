@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c393ad293eb1c4aa62ff26148af6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: (Hold) Adjust Volume with A and D
+  promptMessage: Switch Side by Holding + A/D
   holdToInteract: 1
   slideSpeed: 0.75
   leftPos: {fileID: 3915483473140202206}
