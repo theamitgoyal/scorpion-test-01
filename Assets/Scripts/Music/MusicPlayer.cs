@@ -10,6 +10,8 @@ public class MusicPlayer : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        //preload audio clip to avoid loading during Play() method
+        currentMusicTrack.LoadAudioData();
     }
 
     public bool IsPlaying()

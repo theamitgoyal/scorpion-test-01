@@ -15,6 +15,7 @@ public class Crossfader : Interactable
 
     private void Start()
     {
+        crossFaderKnob.transform.position = leftPos.position;
         MoveCrossfader.Invoke();
     }
 
