@@ -13,6 +13,11 @@ public class Crossfader : Interactable
 
     public event Action MoveCrossfader;
 
+    private void Start()
+    {
+        MoveCrossfader.Invoke();
+    }
+
     protected override void HoldInteract(Vector2 input)
     {
         //Move crossfader knob based on received input

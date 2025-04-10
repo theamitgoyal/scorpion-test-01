@@ -3,7 +3,6 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] private AudioClip currentMusicTrack;
-    [Range(0f, 1f)] [SerializeField] private float volume = 0.5f;
     
     AudioSource audioSource;
     
@@ -29,7 +28,6 @@ public class MusicPlayer : MonoBehaviour
         }
         
         audioSource.clip = currentMusicTrack;
-        audioSource.volume = volume;
         audioSource.Play();
 
     }
