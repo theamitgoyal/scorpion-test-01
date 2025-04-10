@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class PlayButton : Interactable
 {
-    Animator animator;
-    MusicPlayer musicPlayer;
+    private Animator animator;
+    private MusicPlayer musicPlayer;
     
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         musicPlayer = GetComponentInParent<MusicPlayer>();
-    }
-
-    void Update()
-    {
-        
     }
 
     protected override void Interact()
     {
         animator.SetTrigger("PlayerInteract");
         musicPlayer.Play();
+
+        //TODO:
+        //If Music is playing, pressing button again should pause the track
+        //Change button material to emissive when track is playing
+        //Make button material switch between emissive and regule when track is paused
     }
 }
