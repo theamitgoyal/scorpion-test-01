@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private Camera cam;
@@ -23,7 +22,5 @@ public class PlayerLook : MonoBehaviour
 
         //Rotate player to look left and right
         transform.Rotate(Vector3.up * rotInputX * Time.deltaTime * xSensitivity);
-
     }
-
 }

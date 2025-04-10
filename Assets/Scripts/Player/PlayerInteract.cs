@@ -1,16 +1,15 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour
-{
-    private Transform cameraTransform;
+{    
     [SerializeField] private float detectionDistance;
     [SerializeField] private LayerMask mask;
 
-    PlayerUI playerUI;
-    InputManager inputManager;
-    bool isInteracting;
+    private Transform cameraTransform;
+    private PlayerUI playerUI;
+    private InputManager inputManager;
+    private bool isInteracting;
 
     private void Start()
     {
@@ -22,7 +21,7 @@ public class PlayerInteract : MonoBehaviour
         inputManager.PlayerInput.Character.Interact.canceled += HoldInteractCanceled;
     }
 
-    void Update()
+    private void Update()
     {
         playerUI.UpdateText(string.Empty);
         
@@ -50,7 +49,6 @@ public class PlayerInteract : MonoBehaviour
                 interactable.BaseHoldInteract(inputManager.CharacterActions.AddInteract.ReadValue<Vector2>());
             }
         }
-
     }
 
     private void HoldInteractPerformed(InputAction.CallbackContext context)
@@ -61,6 +59,5 @@ public class PlayerInteract : MonoBehaviour
     private void HoldInteractCanceled(InputAction.CallbackContext context)
     {
         isInteracting = false;
-    }
-   
+    }   
 }

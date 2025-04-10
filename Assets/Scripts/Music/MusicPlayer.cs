@@ -4,8 +4,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] private AudioClip currentMusicTrack;
     
-    AudioSource audioSource;
-    
+    private AudioSource audioSource;
 
     private void Start()
     {

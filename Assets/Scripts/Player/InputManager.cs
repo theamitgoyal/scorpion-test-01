@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -8,13 +7,11 @@ public class InputManager : MonoBehaviour
     public PlayerInput PlayerInput { get => playerInput; }
 
     private PlayerInput.CharacterActions characterActions;
-
     public PlayerInput.CharacterActions CharacterActions { get => characterActions; }
 
     private PlayerLook playerLook;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    private void Awake()
     {
         playerInput = new PlayerInput();
         characterActions = playerInput.Character;
@@ -22,8 +19,7 @@ public class InputManager : MonoBehaviour
         playerLook = GetComponent<PlayerLook>();
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    private void LateUpdate()
     {
         playerLook.ProcessLook(characterActions.Look.ReadValue<Vector2>());
     }

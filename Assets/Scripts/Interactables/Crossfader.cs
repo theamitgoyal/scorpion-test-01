@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Crossfader : Interactable
@@ -25,10 +24,16 @@ public class Crossfader : Interactable
         float movementX = input.x * slideSpeed * Time.deltaTime;
         float crossfaderNewPosX = Mathf.Clamp(crossFaderKnob.transform.position.x + movementX, leftPos.transform.position.x, rightPos.transform.position.x);
         crossFaderKnob.transform.position = new Vector3(crossfaderNewPosX, crossFaderKnob.transform.position.y, crossFaderKnob.transform.position.z);
+        //TODO:
+        //Instead of analog crossfader movement, move crossfader a fixed step each time A or D is pressed
+        //This may need a change to the input setup where A/D and L-Stick are changed from value type to button type
 
         MoveCrossfader.Invoke();
+        //TODO:
+        //Old position of crossfader Knob can be stored in a temporary variable
+        //Invoke event only if the neew crossfader Knob position is not the same as the old one
     }
-    
+
     public Vector2 GetMusicPlayerVolumes()
     {
         float totalDistance = rightPos.position.x - leftPos.position.x;
