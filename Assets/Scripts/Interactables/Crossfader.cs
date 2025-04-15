@@ -14,8 +14,8 @@ public class Crossfader : Interactable
 
     private void Start()
     {
+        //Set Crossfader to left side music player
         crossFaderKnob.transform.position = leftPos.position;
-        MoveCrossfader.Invoke();
     }
 
     protected override void HoldInteract(Vector2 input)
