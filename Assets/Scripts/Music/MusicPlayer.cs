@@ -6,7 +6,7 @@ public class MusicPlayer : MonoBehaviour
     
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         //preload audio clip to avoid loading during Play() method
@@ -55,4 +55,7 @@ public class MusicPlayer : MonoBehaviour
 
         audioSource.volume = targetVolume;
     }
+
+    public float GetVolume()
+    { return audioSource.volume; }
 }

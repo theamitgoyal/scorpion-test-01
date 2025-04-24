@@ -6,20 +6,18 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField] private Crossfader crossfader;
 
-    private void Start()
+    private void Awake()
     {
         crossfader.MoveCrossfader += Crossfade;
-        //Set Initial volumes of music players
-        musicPlayerX.UpdateVolume(1);
-        musicPlayerY.UpdateVolume(0);
+        crossfader.InitializeCrossfader();
     }
 
-    private void Crossfade()
+    private void Crossfade(Vector2 newVolumeValues)
     {
-        Vector2 newVolumeValues = crossfader.GetMusicPlayerVolumes();
-
         musicPlayerX.UpdateVolume(newVolumeValues.x);
+        Debug.Log(musicPlayerX.GetVolume());
         musicPlayerY.UpdateVolume(newVolumeValues.y);
+        Debug.Log(musicPlayerY.GetVolume());
     }
     
 }
