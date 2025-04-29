@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937ce34f0a11f6f4b8b71676d6d46401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicPlayerX: {fileID: 4640901438540101218}
-  musicPlayerY: {fileID: 8273776178169189639}
+  musicPlayerLeft: {fileID: 4640901438540101218}
+  musicPlayerRight: {fileID: 8273776178169189639}
   crossfader: {fileID: 7221530633829260259}
 --- !u!1 &4880799470542413600
 GameObject:

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private MusicPlayer musicPlayerX, musicPlayerY;
+    [SerializeField] private MusicPlayer musicPlayerLeft, musicPlayerRight;
 
     [SerializeField] private Crossfader crossfader;
 
@@ -12,12 +12,12 @@ public class MusicManager : MonoBehaviour
         crossfader.InitializeCrossfader();
     }
 
-    private void Crossfade(Vector2 newVolumeValues)
+    private void Crossfade(float newVolumeLeftValue)
     {
-        musicPlayerX.UpdateVolume(newVolumeValues.x);
-        Debug.Log(musicPlayerX.GetVolume());
-        musicPlayerY.UpdateVolume(newVolumeValues.y);
-        Debug.Log(musicPlayerY.GetVolume());
+        //Left side volume returned by crossfader
+        musicPlayerLeft.UpdateVolume(newVolumeLeftValue);
+        //Right side volume = 1 - Left side volume
+        musicPlayerRight.UpdateVolume(1 - newVolumeLeftValue);
     }
     
 }
